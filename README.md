@@ -49,6 +49,27 @@ A Frappe-based Library Management application for managing books, members, libra
 
 The app includes ready-to-use reports and dashboard cards to monitor library operations such as book availability, issued books, overdue books, total books, and registered members.
 
+## Frappe Concepts Implemented
+
+- Custom DocTypes
+- Single DocType
+- Child Table DocType
+- Tree DocType
+- Submittable DocTypes
+- Workflow
+- Workflow States
+- Workflow Actions
+- Fixtures
+- Reports
+- Number Cards
+- Scheduler Events
+- Document Events
+- Whitelisted Methods
+- Background Jobs
+- Client Scripts
+- Web Form Script
+- Email Notification
+
 ## License
 
 MIT
