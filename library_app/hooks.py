@@ -1,3 +1,17 @@
+scheduler_events = {
+    "daily": [
+        "library_app.library_management.doctype.library_transaction.library_transaction.mark_overdue_transactions"
+    ]
+}
+
+doc_events = {
+    "Library Transaction": {
+        "on_submit":
+        "library_app.library_management.doctype.library_transaction.library_transaction.send_issue_email"
+    }
+}
+
+
 app_name = "library_app"
 app_title = "Library Management"
 app_publisher = "Sujithra"
@@ -12,32 +26,43 @@ app_license = "mit"
 
 # Each item in the list will be shown as an app in the apps page
 # add_to_apps_screen = [
-# 	{
-# 		"name": "library_app",
-# 		"logo": "/assets/library_app/logo.png",
-# 		"title": "Library Management",
-# 		"route": "/library_app",
-# 		"has_permission": "library_app.api.permission.has_app_permission"
-# 	}
-# ]
+#   	{
+#   		"name": "library_app",
+#   		"logo": "/assets/library_app/logo.png",
+#   		"title": "Library Management",
+#   		"route": "/library_app",
+#    		"has_permission": "library_app.api.permission.has_app_permission"
+#   	}
+#   ]
 
 # Includes in <head>
 # ------------------
 
 # include js, css files in header of desk.html
-# app_include_css = "/assets/library_app/css/library_app.css"
-# app_include_js = "/assets/library_app/js/library_app.js"
-
+app_include_css = "/assets/library_app/css/library_app.css"
+app_include_js = "/assets/library_app/js/library_app.js"
+doctype_js = {
+      "Library Member": "public/js/library_member.js"
+ }
 # include js, css files in header of web template
-# web_include_css = "/assets/library_app/css/library_app.css"
-# web_include_js = "/assets/library_app/js/library_app.js"
+web_include_css = "/assets/library_app/css/library_app.css"
+web_include_js = "/assets/library_app/js/library_app.js"
 
 # include custom scss in every website theme (without file extension ".scss")
-# website_theme_scss = "library_app/public/scss/website"
+website_theme_scss = "library_app/public/scss/website"
 
 # include js, css files in header of web form
 # webform_include_js = {"doctype": "public/js/doctype.js"}
 # webform_include_css = {"doctype": "public/css/doctype.css"}
+webform_include_js = {
+    "library-member-registration":
+        "public/js/library_member_webform.js"
+}
+
+webform_include_css = {
+    "library-member-registration":
+        "public/css/library_member_webform.css"
+}
 
 # include js in page
 # page_js = {"page" : "public/js/file.js"}
@@ -68,7 +93,7 @@ app_license = "mit"
 # ----------
 
 # automatically create page for each record of this doctype
-# website_generators = ["Web Page"]
+website_generators = ["Web Page"]
 
 # Jinja
 # ----------
@@ -143,6 +168,12 @@ app_license = "mit"
 # 		"on_cancel": "method",
 # 		"on_trash": "method"
 # 	}
+# }
+# doc_events = {
+#     "Library Member": {
+#         "after_insert": "library_app.api.member_saved",
+        
+#     }
 # }
 
 # Scheduled Tasks
@@ -246,4 +277,4 @@ app_license = "mit"
 # ------------
 # List of apps whose translatable strings should be excluded from this app's translations.
 # ignore_translatable_strings_from = []
-
+test_variable = "HELLO"

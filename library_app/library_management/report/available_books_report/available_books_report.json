@@ -1,0 +1,29 @@
+{
+ "add_total_row": 0,
+ "add_translate_data": 0,
+ "columns": [],
+ "creation": "2026-06-09 15:15:48.043445",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "letter_head": null,
+ "modified": "2026-06-11 15:48:42.393268",
+ "modified_by": "Administrator",
+ "module": "Library Management",
+ "name": "Available Books Report",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "SELECT\n    book_name AS \"Book Name:Data:200\",\n    isbn AS \"ISBN:Data:150\",\n    author AS \"Author:Link/Author:180\",\n    category AS \"Category:Link/Book Category:180\",\n    total_copies AS \"Total Copies:Int:120\",\n    available_copies AS \"Available Copies:Int:140\",\n    status AS \"Status:Data:120\"\nFROM\n    `tabBook`\nWHERE\n    available_copies > 0\n    \nORDER BY\n    book_name",
+ "ref_doctype": "Book",
+ "report_name": "Available Books Report",
+ "report_type": "Query Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  }
+ ],
+ "timeout": 0
+}

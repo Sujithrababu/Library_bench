@@ -1,0 +1,29 @@
+{
+ "add_total_row": 0,
+ "add_translate_data": 0,
+ "columns": [],
+ "creation": "2026-06-09 15:19:26.324672",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "letter_head": null,
+ "modified": "2026-06-09 15:19:26.324672",
+ "modified_by": "Administrator",
+ "module": "Library Management",
+ "name": "Issued Books Report",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "SELECT\n    name AS \"Transaction:Link/Library Transaction:180\",\n    member AS \"Member:Link/Library Member:180\",\n    member_name AS \"Member Name:Data:180\",\n    book AS \"Book:Link/Book:180\",\n    book_name AS \"Book Name:Data:200\",\n    issue_date AS \"Issue Date:Date:120\",\n    due_date AS \"Due Date:Date:120\",\n    status AS \"Status:Data:120\"\nFROM\n    `tabLibrary Transaction`\nWHERE\n    docstatus = 1\n    AND status = 'Issued'\nORDER BY\n    due_date",
+ "ref_doctype": "Book",
+ "report_name": "Issued Books Report",
+ "report_type": "Query Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  }
+ ],
+ "timeout": 0
+}
