@@ -10,7 +10,11 @@ doc_events = {
         "library_app.library_management.doctype.library_transaction.library_transaction.send_issue_email"
     }
 }
-
+fixtures = [
+    "Workflow",
+    "Workflow State",
+    "Workflow Action Master"
+]
 
 app_name = "library_app"
 app_title = "Library Management"
